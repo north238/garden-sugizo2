@@ -1,0 +1,23 @@
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #2C3639;
+}
+
+.ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+}
+
+.li {
+  margin: .75rem;
+}
+
+.a {
+  color: white;
+}
+
+.a:hover {
+  color: white;
+}
