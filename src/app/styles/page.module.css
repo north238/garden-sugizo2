@@ -50,7 +50,7 @@
 
 .subTitle {
   color: blue;
-  font-size: 1rem;
+  font-size: .9rem;
 }
 
 .p {
@@ -61,4 +61,31 @@
   max-width: 900px;
   overflow: hidden;
   height: auto;
+}
+
+.slider {
+  max-width: 1200px;
+  height: auto;
+}
+
+.fadeIn {
+  animation: fadeIn 1.5s linear both;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .p {
+    font-size: .9rem;
+    text-align: justify;
+  }
 }

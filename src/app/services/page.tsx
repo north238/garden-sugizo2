@@ -1,93 +1,57 @@
 import React from 'react';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import ImageList from '@mui/material/ImageList';
+import ImageListItem from '@mui/material/ImageListItem';
+import ImageListItemBar from '@mui/material/ImageListItemBar';
+import ListSubheader from '@mui/material/ListSubheader';
+import Typography from '@mui/material/Typography';
+import Navbar from '../components/Navbar';
+import styles from './page.module.css';
+import Image from 'next/image';
+import { ServiceData } from '../utils/ServiceData';
 
-const page = () => {
+const Services = () => {
   return (
-    <section>
-      <div>
-        <div>
-          <div>
-            <span>施工実績</span>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div>
-          <div>
-            <a href="#">
-              <img src="/images/doma.jpg" alt="土間コンクリート施工"></img>
-            </a>
-          </div>
-          <div>
-            <h6>【土間コンクリートの施工】</h6>
-            <p>
-              カーポート下に雑草が生えないようにと要望をいただき、土間コンクリートを施工しました。
-            </p>
-          </div>
-        </div>
-        <div>
-          <div>
-            <a href="#">
-              <img src="/images/jinkousiba.jpg" alt="人工芝の貼り付け"></img>
-            </a>
-          </div>
-          <div>
-            <h6>【人工芝の貼り付け】</h6>
-            <p>雑草対策に手間のかからない人工芝をお庭一面に敷きこみました。</p>
-          </div>
-        </div>
-        <div>
-          <div>
-            <a href="#">
-              <img src="/images/image_2.jpg" alt="タイルデッキ施工"></img>
-            </a>
-          </div>
-          <div>
-            <h6>【タイルデッキの施工】</h6>
-            <p>芝の一部を剥ぎ取りタイルデッキを施工しました。</p>
-          </div>
-        </div>
-        <div>
-          <div>
-            <a href="#">
-              <img src="/images/image_09.jpg" alt="サイクルポートの設置"></img>
-            </a>
-          </div>
-          <div>
-            <h6>【サイクルポートの設置】</h6>
-            <p>
-              駐車場のコンクリートを拡張して、サイクルポートの設置をしました。
-            </p>
-          </div>
-        </div>
-        <div>
-          <div>
-            <a href="#">
-              <img src="/images/image_10.jpg" alt="フェンスの設置"></img>
-            </a>
-          </div>
-          <div>
-            <h6>【フェンスの設置】</h6>
-            <p>
-              生け垣を抜根して、手間のかからないフェンスへのリフォームを設置しました。
-            </p>
-          </div>
-        </div>
-        <div>
-          <div>
-            <a href="#">
-              <img src="/images/image_1.jpg" alt="植栽"></img>
-            </a>
-          </div>
-          <div>
-            <h6>【植栽】</h6>
-            <p>
-              植栽をしてその周りには「ウッドチップ」や「白砕石」を敷き詰め庭を整えました。
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <>
+      <Navbar />
+      <Container>
+        <Typography
+          variant="h4"
+          sx={{ mt: 2, textAlign: 'center', borderBottom: '1px solid' }}
+        >
+          施工実績
+        </Typography>
+        <ImageList cols={2} sx={{ '@media (max-width:600px)': { cols: 2 } }}>
+          <ImageListItem key="Subheader" cols={2}>
+            <ListSubheader component="div">施工実績</ListSubheader>
+          </ImageListItem>
+          {ServiceData.map((item) => (
+            <ImageListItem key={item.title}>
+              <Image
+                src={`${item.image}`}
+                alt={item.alt}
+                loading="lazy"
+                width={1980}
+                height={1150}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                style={{
+                  width: "fit-content",
+                  height: 'auto',
+                  border: '1px solid #3a302d',
+                }}
+              />
+              <ImageListItemBar
+                title={item.title}
+                subtitle={<span>{item.text}</span>}
+                position="below"
+              />
+            </ImageListItem>
+          ))}
+        </ImageList>
+      </Container>
+    </>
   );
 };
 
-export default page;
+export default Services;

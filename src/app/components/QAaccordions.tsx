@@ -68,15 +68,17 @@ export default function QAaccordions() {
           aria-controls="panel1bh-content"
           id="panel1bh-header"
         >
-          <Typography sx={{ width: '100%', flexShrink: 0 }}>
+          <Typography
+            sx={{ width: '100%', flexShrink: 0, fontSize: { xs: 14 } }}
+          >
             どのような依頼できるのですか？
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography sx={{ fontSize: { xs: 14 } }}>
             お庭・外構工事、デザイン、植栽、庭木の剪定・伐採・抜根、草刈りなどです。
             <Button
-              sx={{ m: 2 }}
+              sx={{ my: 2, fontSize: { xs: 12 } }}
               href="/services"
               variant="contained"
               endIcon={<NavigateNextIcon />}
@@ -96,12 +98,14 @@ export default function QAaccordions() {
           aria-controls="panel2bh-content"
           id="panel2bh-header"
         >
-          <Typography sx={{ width: '100%', flexShrink: 0 }}>
+          <Typography
+            sx={{ width: '100%', flexShrink: 0, fontSize: { xs: 14 } }}
+          >
             見積だけでもできますか？
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography sx={{ fontSize: { xs: 14 } }}>
             もちろんです。無料でお見積りさせていただきます。どんなことでもご気軽にご相談下さい。
           </Typography>
         </AccordionDetails>
@@ -115,15 +119,17 @@ export default function QAaccordions() {
           aria-controls="panel3bh-content"
           id="panel3bh-header"
         >
-          <Typography sx={{ width: '100%', flexShrink: 0 }}>
+          <Typography
+            sx={{ width: '100%', flexShrink: 0, fontSize: { xs: 14 } }}
+          >
             対応しているエリアはどこですか？
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography sx={{ fontSize: { xs: 14 } }}>
             春日井市を中心に活動しています。隣接している市でも対応可能です。
             <Button
-              sx={{ m: 2 }}
+              sx={{ my: 2, fontSize: { xs: 12 } }}
               href="/map"
               variant="contained"
               endIcon={<NavigateNextIcon />}
@@ -143,12 +149,14 @@ export default function QAaccordions() {
           aria-controls="panel4bh-content"
           id="panel4bh-header"
         >
-          <Typography sx={{ width: '100%', flexShrink: 0 }}>
+          <Typography
+            sx={{ width: '100%', flexShrink: 0, fontSize: { xs: 14 } }}
+          >
             どれくらいの期間で施工できますか？
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
+          <Typography sx={{ fontSize: { xs: 14 } }}>
             施工内容、環境より異なります。お客様のお庭を拝見させていただきお伝えいたします。ご気軽にお問い合わせください。
           </Typography>
         </AccordionDetails>

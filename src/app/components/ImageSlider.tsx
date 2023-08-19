@@ -2,8 +2,8 @@
 
 import Image from 'next/image';
 import React, { useState } from 'react';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { SliderData } from '../utils/SliderData';
 import styles from './ImageSlider.module.css';
 
@@ -29,8 +29,8 @@ const ImageSlider: React.FC<slidesProps> = ({ slides }) => {
 
   return (
     <section className={styles.slider}>
-      <ArrowBackIcon className={styles.leftArrow} onClick={prevSlide} />
-      <ArrowForwardIcon className={styles.rightArrow} onClick={nextSlide} />
+      <ChevronLeftIcon className={styles.leftArrow} onClick={prevSlide} />
+      <NavigateNextIcon className={styles.rightArrow} onClick={nextSlide} />
       {SliderData.map((slide, index) => {
         return (
           <div

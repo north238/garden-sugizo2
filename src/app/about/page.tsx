@@ -1,55 +1,94 @@
-export default function Home() {
+import React from 'react';
+import Button from '@mui/material/Button/Button';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import PhoneForwardedOutlinedIcon from '@mui/icons-material/PhoneForwardedOutlined';
+import Navbar from '../components/Navbar';
+import styles from './page.module.css';
+import Image from 'next/image';
+import Typography from '@mui/material/Typography';
+
+const About: React.FC = () => {
   return (
-    <div>
-      <div>
-        <div>
-          <div>
-            <div>
-              <div>
-                <table id="table01">
-                  <tr>
-                    <th>社名</th>
-                    <td>庭屋すぎ蔵（にわやすぎぞう）</td>
-                  </tr>
-                  <tr>
-                    <th>連絡先</th>
-                    <td>
-                      <a href="tel:+0568-50-2621">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          fill="currentColor"
-                          viewBox="0 0 16 16"
-                        >
-                          <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
-                        </svg>
-                        <span> </span>0568-50-2621
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th>設立</th>
-                    <td>2022年1月</td>
-                  </tr>
-                  <tr>
-                    <th>代表取締役</th>
-                    <td>高杉 竜平（たかすぎ りゅうへい）</td>
-                  </tr>
-                  <tr>
-                    <th>保有資格</th>
-                    <td>一級造園施工管理技士・電気工事士二種</td>
-                  </tr>
-                  <tr>
-                    <th>所在地</th>
-                    <td>愛知県春日井市外之原町2005-2</td>
-                  </tr>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <>
+      <Navbar />
+      <Container fixed>
+        <Box sx={{ mt: 10 }}>
+          <Image
+            src={'/img_13.jpg'}
+            alt={'About Image'}
+            width={1980}
+            height={1150}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            style={{
+              width: '100%',
+              height: 'auto',
+              boxShadow: '5px 5px 5px rgba(20,20,20,.7)',
+              border: '1px solid #3a302d',
+              borderRadius: '10px',
+            }}
+          />
+        </Box>
+        <Box sx={{mt: 5}}>
+        <Typography variant="body1">
+          私たちは春日井市を中心に活動しています。2022年に独立、起業し個人で活動。一人ひとりとの関係を大切にし、お客様に寄りそった提案を心がけております。個人で経営しているからこそ柔軟に対応できることが強みと感じています。どんな小さな困りごとにも対応します。ご気軽にお声掛けください。
+        </Typography>
+        </Box>
+        <Box sx={{ mt: 5 }}>
+          <table className={styles.table}>
+            <tbody>
+              <tr className={styles.tableRow}>
+                <th className={styles.tableHeader}>社名</th>
+                <td className={styles.tableCell}>
+                  庭屋すぎ蔵（にわやすぎぞう）
+                </td>
+              </tr>
+              <tr className={styles.tableRow}>
+                <th className={styles.tableHeader}>連絡先</th>
+                <td className={styles.tableCell}>
+                  <Button
+                    sx={{ fontSize: '1rem' }}
+                    variant="text"
+                    size="large"
+                    color="success"
+                    href="tel:+0568-50-2621"
+                    startIcon={<PhoneForwardedOutlinedIcon />}
+                  >
+                    0568-50-2621
+                  </Button>
+                  <p className={styles.p}>
+                    ※受付時間 8:00～18:00 (お盆、年末年始除く)
+                  </p>
+                </td>
+              </tr>
+              <tr className={styles.tableRow}>
+                <th className={styles.tableHeader}>設立</th>
+                <td className={styles.tableCell}>2022年1月</td>
+              </tr>
+              <tr className={styles.tableRow}>
+                <th className={styles.tableHeader}>代表取締役</th>
+                <td className={styles.tableCell}>
+                  高杉 竜平（たかすぎ りゅうへい）
+                </td>
+              </tr>
+              <tr className={styles.tableRow}>
+                <th className={styles.tableHeader}>保有資格</th>
+                <td className={styles.tableCell}>
+                  一級造園施工管理技士・電気工事士二種
+                </td>
+              </tr>
+              <tr className={styles.tableRow}>
+                <th className={styles.tableHeader}>所在地</th>
+                <td className={styles.tableCell}>
+                  愛知県春日井市外之原町2005-2
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </Box>
+      </Container>
+    </>
   );
-}
+};
+
+export default About;

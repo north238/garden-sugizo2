@@ -10,7 +10,10 @@
   top: 50%;
   right: 32px;
   font-size: 2.5rem;
-  color: #3a302d;
+  color: #8f9faa;
+  border: 1px solid #edf2f7;
+  border-radius: 100%;
+  background-color: #edf2f7;
   opacity: .8;
   z-index: 10;
   cursor: pointer;
@@ -34,4 +37,10 @@
   opacity: 1;
   transition-duration: 1.5s;
   transform: translateX(2);
+}
+
+@media screen and (max-width: 600px) {
+  .rightArrow, .leftArrow {
+    font-size: 1.75rem;
+  }
 }

@@ -1,0 +1,40 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableHeader {
+  background-color: #f0f0f0;
+  padding: 10px;
+  text-align: left;
+  font-weight: bold;
+  border: 1px solid #b5b1b1;
+}
+
+.tableCell {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+@media screen and (max-width: 480px) {
+.table{
+  width: auto;
+}
+
+  .tableHeader,
+  .tableCell {
+    width: 100%;
+    display: block;
+    font-size: 13px;
+  }
+
+  .tableHeader {
+    width: 100%;
+    text-align: center;
+  }
+
+  .tableCell {
+    text-align: center;
+    padding-top: 0;
+  }
+}
