@@ -4,28 +4,30 @@ import Container from '@mui/material/Container';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
-import ListSubheader from '@mui/material/ListSubheader';
+import IconButton from '@mui/material/IconButton';
+import InfoIcon from '@mui/icons-material/Info';
 import Typography from '@mui/material/Typography';
 import Navbar from '../components/Navbar';
 import styles from './page.module.css';
 import Image from 'next/image';
 import { ServiceData } from '../utils/ServiceData';
+import { Tooltip } from '@mui/material';
 
 const Services = () => {
   return (
     <>
       <Navbar />
-      <Container>
-        <Typography
-          variant="h4"
-          sx={{ mt: 2, textAlign: 'center', borderBottom: '1px solid' }}
-        >
+      <Container sx={{ mt: 10 }}>
+        <Typography variant={'h5'} sx={{ borderBottom: '1px solid' }}>
           施工実績
         </Typography>
-        <ImageList cols={2} sx={{ '@media (max-width:600px)': { cols: 2 } }}>
-          <ImageListItem key="Subheader" cols={2}>
-            <ListSubheader component="div">施工実績</ListSubheader>
-          </ImageListItem>
+        <ImageList
+          gap={2}
+          sx={{
+            gridTemplateColumns:
+              'repeat(auto-fill, minmax(340px, 1fr))!important',
+          }}
+        >
           {ServiceData.map((item) => (
             <ImageListItem key={item.title}>
               <Image
@@ -36,15 +38,28 @@ const Services = () => {
                 height={1150}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 style={{
-                  width: "fit-content",
+                  width: '100%',
                   height: 'auto',
                   border: '1px solid #3a302d',
+                  borderRadius: '5px',
                 }}
               />
               <ImageListItemBar
                 title={item.title}
                 subtitle={<span>{item.text}</span>}
-                position="below"
+                position="bottom"
+                actionIcon={
+                  <IconButton
+                    sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
+                    aria-label={`info about ${item.title}`}
+                    href={`${item.url}`}
+                  >
+                    <Tooltip title='詳細を表示'>
+                      <InfoIcon />
+                    </Tooltip>
+                  </IconButton>
+                }
+                sx={{ overflow: 'hidden', borderRadius: '5px' }}
               />
             </ImageListItem>
           ))}

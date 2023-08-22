@@ -2,11 +2,10 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import Navbar from '../components/Navbar';
-import styles from './page.module.css';
+import Navbar from '../../components/Navbar';
 import Image from 'next/image';
 
-const Map: React.FC = () => {
+const Work: React.FC = () => {
   return (
     <>
       <Navbar />
@@ -15,17 +14,17 @@ const Map: React.FC = () => {
           variant="h5"
           sx={{ mt:2, borderBottom: '1px solid' }}
         >
-          対応エリア
+          施工実績_01
         </Typography>
         <Box sx={{ mt: 2 }}>
           <Typography variant="body1">
-            春日井市を中心に活動しています。隣接している市の名古屋市守山区・北区、瀬戸市、尾張旭市、犬山市、小牧市、豊山町も対応いたします。ぜひご相談ください。
+          カーポート下に雑草が生えないようにと要望をいただき、土間コンクリートを施工。
           </Typography>
         </Box>
         <Box sx={{ mt: 2 }}>
           <Image
-            src={'/map.png'}
-            alt={'エリアマップ'}
+            src={'/img_16.jpg'}
+            alt={'土間コンクリートの施工'}
             width={1980}
             height={1150}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -43,4 +42,4 @@ const Map: React.FC = () => {
   );
 };
 
-export default Map;
+export default Work;

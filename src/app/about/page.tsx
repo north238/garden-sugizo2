@@ -12,8 +12,11 @@ const About: React.FC = () => {
   return (
     <>
       <Navbar />
-      <Container fixed>
-        <Box sx={{ mt: 10 }}>
+      <Container fixed sx={{ mt: 10 }}>
+      <Typography variant={'h5'} sx={{borderBottom: '1px solid'}}>
+          私たちについて
+        </Typography>
+        <Box sx={{ mt: 2}}>
           <Image
             src={'/img_13.jpg'}
             alt={'About Image'}
