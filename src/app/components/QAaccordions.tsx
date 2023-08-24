@@ -12,6 +12,9 @@ import Button from '@mui/material/Button/Button';
 import Typography from '@mui/material/Typography';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { notojp } from '../utils/font';
+import { ThemeProvider } from '@mui/material/styles';
+import { theme } from '../styles/theme';
 
 const Accordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -59,6 +62,7 @@ export default function QAaccordions() {
 
   return (
     <div>
+      <ThemeProvider theme={theme}>
       <Accordion
         expanded={expanded === 'panel1'}
         onChange={handleChange('panel1')}
@@ -161,6 +165,7 @@ export default function QAaccordions() {
           </Typography>
         </AccordionDetails>
       </Accordion>
+      </ThemeProvider>
     </div>
   );
 }

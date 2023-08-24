@@ -35,7 +35,15 @@ const ImageSlider: React.FC<slidesProps> = ({ slides }) => {
         return (
           <div
             className={
-              index === current ? `${styles.slideActive}` : `${styles.slide}`
+              index === current
+                ? `${styles.slide} ${styles.slideActive}`
+                : index === current + 1 ||
+                  (current === length - 1 && index === 0)
+                ? `${styles.slide} ${styles.slideNext}`
+                : index === current - 1 ||
+                  (current === 0 && index === length - 1)
+                ? `${styles.slide} ${styles.slidePrev}`
+                : styles.slide
             }
             key={index}
           >
@@ -49,8 +57,6 @@ const ImageSlider: React.FC<slidesProps> = ({ slides }) => {
                   width: '100%',
                   height: 'auto',
                   boxShadow: '5px 5px 5px rgba(20,20,20,.7)',
-                  border: '1px solid #3a302d',
-                  borderRadius: '10px',
                 }}
                 className={styles.image}
               />

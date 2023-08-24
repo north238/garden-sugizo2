@@ -32,9 +32,14 @@
 
 .heroMainTitle {
   font-size: 2rem;
+  letter-spacing: .5rem;
 }
 
-.heroSubTitle, .theme {
+.heroSubTitle {
+  font-size: .7rem;
+}
+
+.theme {
   font-size: 1rem;
 }
 
@@ -68,20 +73,6 @@
   height: auto;
 }
 
-.fadeIn {
-  animation: fadeIn 1.5s linear both;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 @media screen and (max-width: 600px) {
   .p {

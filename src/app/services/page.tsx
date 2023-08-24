@@ -21,7 +21,7 @@ const Services = () => {
           施工実績
         </Typography>
         <ImageList
-          gap={2}
+          gap={4}
           sx={{
             gridTemplateColumns:
               'repeat(auto-fill, minmax(340px, 1fr))!important',
@@ -39,7 +39,6 @@ const Services = () => {
                 style={{
                   width: '100%',
                   height: 'auto',
-                  border: '1px solid #3a302d',
                   borderRadius: '5px',
                 }}
               />

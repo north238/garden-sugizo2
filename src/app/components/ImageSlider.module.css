@@ -30,13 +30,23 @@
 
 .slide {
   opacity: 0;
-  transition-duration: 1s ease;
+  transition: opacity 1s ease, transform 1s ease;
+  transform: translateX(0);
 }
 
 .slideActive {
   opacity: 1;
-  transition-duration: 1.5s;
-  transform: translateX(2);
+  transform: translateX(0);
+}
+
+.slideNext {
+  opacity: 0; /* 非表示にするスライド */
+  transform: translateX(100%); /* 画面外へ移動 */
+}
+
+.slidePrev {
+  opacity: 0; /* 非表示にするスライド */
+  transform: translateX(-100%); /* 画面外へ移動 */
 }
 
 @media screen and (max-width: 600px) {
