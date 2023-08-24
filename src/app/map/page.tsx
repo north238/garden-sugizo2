@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Navbar from '../components/Navbar';
-import styles from './page.module.css';
+import Footer from '../components/Footer';
 import Image from 'next/image';
 
 const Map: React.FC = () => {
@@ -24,7 +24,7 @@ const Map: React.FC = () => {
         </Box>
         <Box sx={{ mt: 2 }}>
           <Image
-            src={'/map.png'}
+            src={'/image/map.png'}
             alt={'エリアマップ'}
             width={1980}
             height={1150}
@@ -39,6 +39,7 @@ const Map: React.FC = () => {
           />
         </Box>
       </Container>
+      <Footer />
     </>
   );
 };

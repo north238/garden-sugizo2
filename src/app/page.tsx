@@ -9,6 +9,7 @@ import PhoneForwardedOutlinedIcon from '@mui/icons-material/PhoneForwardedOutlin
 import Navbar from './components/Navbar';
 import ImageSlider from './components/ImageSlider';
 import FadeAnimation from './components/FadeAnimation';
+import Footer from './components/Footer';
 import QAaccordions from './components/QAaccordions';
 import { SliderData } from './utils/SliderData';
 import QAIcon from '../../public/Q&A_icon.svg';
@@ -18,7 +19,7 @@ export default function Page() {
   return (
     <>
       <Navbar />
-      <Box sx={{ flexGrow: 1, pt: 10 }}>
+      <Box sx={{ flexGrow: 1 }}>
         <Grid
           container
           spacing={2}
@@ -35,7 +36,7 @@ export default function Page() {
               style={{
                 objectFit: 'cover',
               }}
-              src="/home.jpeg"
+              src="/image/home.jpeg"
               alt={'home image'}
             />
             <h6 className={styles.heroSubTitle}>Garden-sugizo</h6>
@@ -49,19 +50,19 @@ export default function Page() {
         <Box sx={{ mt: 10 }}>
           <Grid container spacing={2}>
             <Grid item md={6}>
-              <FadeAnimation rootMargin="-100px" animation="fadeIn" triggerOnce>
+              <FadeAnimation rootMargin="0px" animation="fadeIn" triggerOnce>
                 <Box sx={{ pb: 3, display: 'flex', flexDirection: 'column' }}>
                   <h6 className={styles.subTitle}>About</h6>
                   <h2 className={styles.mainTitle}>
                     <span>私たちについて</span>
                   </h2>
                   <p className={styles.p}>
-                    私たちは個人でお庭まわりの工事を施工しています。
+                    庭屋すぎ蔵のホームページをご覧いただき有難うございます。私たちは個人でお庭まわりの工事を施工しています。
                   </p>
                 </Box>
                 <Box className={styles.aboutImage}>
                   <Image
-                    src={'/img_13.jpg'}
+                    src={'/image/img_13.jpg'}
                     alt={'About image'}
                     width={1980}
                     height={1150}
@@ -78,7 +79,7 @@ export default function Page() {
               </FadeAnimation>
             </Grid>
             <Grid item md={6}>
-              <FadeAnimation rootMargin="-100px" animation="fadeIn" triggerOnce>
+              <FadeAnimation rootMargin="0px" animation="fadeIn" triggerOnce>
                 <Box
                   sx={{
                     display: 'flex',
@@ -103,7 +104,10 @@ export default function Page() {
                     </Box>
                   </Box>
                   <Box sx={{ p: { xs: 4, md: 10 }, fontSize: { xs: '.9rem' } }}>
-                    私たちにとって大きな利益が生まれそうでも、将来的に問題のありそうな工事、商品は売りません。
+                    フランクに会話するという事ではなく、損得勘定を抜きにして、お施主様にとって1番良い選択をさせて頂きたい。
+                    <br />
+                    <br />
+                    もし、私たちにとって大きな利益が生まれそうでも、将来的に問題のありそうな工事、商品は売りません。
                     友人のような関係だからこそできるアドバイスがあります。
                   </Box>
                   <Button
@@ -122,26 +126,26 @@ export default function Page() {
 
         <Box sx={{ mt: 10 }}>
           <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-            <FadeAnimation rootMargin="100px" animation="fadeIn" triggerOnce>
+            <FadeAnimation rootMargin="0px" animation="fadeIn" triggerOnce>
               <h6 className={styles.subTitle}>Services</h6>
               <h2 className={styles.mainTitle}>できること</h2>
             </FadeAnimation>
-            <FadeAnimation rootMargin="-100px" animation="fadeIn" triggerOnce>
+            <FadeAnimation rootMargin="0px" animation="fadeIn" triggerOnce>
               <Box sx={{ px: { xs: 4, md: 10 } }}>
                 <p className={styles.p}>
-                  庭木の剪定・植栽から造園デザインまで
+                  『庭木の剪定・植栽』『造園デザイン』まで
                   外構・エクステリア工事なども施工しております。
-                  お庭のことならお任せください。
+                  お庭のことならすべてお任せください。
                 </p>
               </Box>
             </FadeAnimation>
           </Box>
-          <FadeAnimation rootMargin="-100px" animation="fadeIn" triggerOnce>
+          <FadeAnimation rootMargin="0px" animation="fadeIn" triggerOnce>
             <Box className={styles.slider}>
               <ImageSlider slides={SliderData} />
             </Box>
           </FadeAnimation>
-          <FadeAnimation rootMargin="-100px" animation="fadeIn" triggerOnce>
+          <FadeAnimation rootMargin="0px" animation="fadeIn" triggerOnce>
             <Box
               component={'h2'}
               sx={{ borderBottom: '1px solid #3a302d', mt: 5 }}
@@ -155,7 +159,7 @@ export default function Page() {
           </FadeAnimation>
         </Box>
 
-        <FadeAnimation rootMargin="-100px" animation="fadeIn" triggerOnce>
+        <FadeAnimation rootMargin="0px" animation="fadeIn" triggerOnce>
           <Box component={'section'} sx={{ mt: 10 }}>
             <h6 className={styles.subTitle}>Contact</h6>
             <h2 className={styles.mainTitle}>
@@ -172,7 +176,7 @@ export default function Page() {
           spacing={2}
         >
           <Grid item md={6}>
-            <FadeAnimation rootMargin="-100px" animation="fadeIn" triggerOnce>
+            <FadeAnimation rootMargin="0px" animation="fadeIn" triggerOnce>
               <Box sx={{ px: 5 }}>
                 <p className={styles.p}>
                   お庭まわりでお困りの方...
@@ -184,7 +188,7 @@ export default function Page() {
             </FadeAnimation>
           </Grid>
           <Grid item md={6}>
-            <FadeAnimation rootMargin="-100px" animation="fadeIn" triggerOnce>
+            <FadeAnimation rootMargin="0px" animation="fadeIn" triggerOnce>
               <Box
                 sx={{
                   display: 'flex',
@@ -228,6 +232,7 @@ export default function Page() {
           </Grid>
         </Grid>
       </Container>
+      <Footer />
     </>
   );
 }

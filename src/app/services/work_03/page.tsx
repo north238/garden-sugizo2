@@ -2,7 +2,8 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import Navbar from '../../components/Navbar';
+import Navbar from '@/app/components/Navbar';
+import Footer from '@/app/components/Footer';
 import Image from 'next/image';
 
 const Work: React.FC = () => {
@@ -10,20 +11,17 @@ const Work: React.FC = () => {
     <>
       <Navbar />
       <Container fixed sx={{ mt: 10 }}>
-        <Typography
-          variant="h5"
-          sx={{ mt:2, borderBottom: '1px solid' }}
-        >
+        <Typography variant="h5" sx={{ mt: 2, borderBottom: '1px solid' }}>
           施工実績_03
         </Typography>
         <Box sx={{ mt: 2 }}>
           <Typography variant="body1">
-          芝の一部を剥ぎ取りタイルデッキを施工しました。
+            芝の一部を剥ぎ取りタイルデッキを施工しました。
           </Typography>
         </Box>
         <Box sx={{ mt: 2 }}>
           <Image
-            src={'/img_03.jpg'}
+            src={'/image/img_03.jpg'}
             alt={'タイルデッキの施工'}
             width={1980}
             height={1150}
@@ -38,6 +36,7 @@ const Work: React.FC = () => {
           />
         </Box>
       </Container>
+      <Footer />
     </>
   );
 };

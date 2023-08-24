@@ -2,7 +2,8 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import Navbar from '../../components/Navbar';
+import Navbar from '@/app/components/Navbar';
+import Footer from '@/app/components/Footer';
 import Image from 'next/image';
 
 const Work: React.FC = () => {
@@ -10,20 +11,17 @@ const Work: React.FC = () => {
     <>
       <Navbar />
       <Container fixed sx={{ mt: 10 }}>
-        <Typography
-          variant="h5"
-          sx={{ mt:2, borderBottom: '1px solid' }}
-        >
+        <Typography variant="h5" sx={{ mt: 2, borderBottom: '1px solid' }}>
           施工実績_02
         </Typography>
         <Box sx={{ mt: 2 }}>
           <Typography variant="body1">
-          雑草対策に手間のかからない人工芝をお庭一面に敷きこみました。
+            雑草対策に手間のかからない人工芝をお庭一面に敷きこみました。
           </Typography>
         </Box>
         <Box sx={{ mt: 2 }}>
           <Image
-            src={'/img_15.jpg'}
+            src={'/image/img_15.jpg'}
             alt={'人工芝の貼り付け'}
             width={1980}
             height={1150}
@@ -38,6 +36,7 @@ const Work: React.FC = () => {
           />
         </Box>
       </Container>
+      <Footer />
     </>
   );
 };

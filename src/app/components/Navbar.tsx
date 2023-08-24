@@ -18,10 +18,8 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import Typography from '@mui/material/Typography';
 import Toolbar from '@mui/material/Toolbar';
-import useScrollTrigger from '@mui/material/useScrollTrigger';
 import MenuIcon from '@mui/icons-material/Menu';
 import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
-import Slide from '@mui/material/Slide';
 import styles from './Navbar.module.css';
 
 const drawerWidth = 240;
@@ -85,7 +83,12 @@ const Navbar: React.FC = (props: Props) => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            <Image src={'/icon.png'} alt={'Nav Logo'} width={60} height={60} />
+            <Image
+              src={'/image/icon.png'}
+              alt={'Nav Logo'}
+              width={60}
+              height={60}
+            />
           </Box>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {setNavLinks.map((item) => (

@@ -1,5 +1,4 @@
 import React from 'react';
-import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
@@ -8,7 +7,7 @@ import IconButton from '@mui/material/IconButton';
 import InfoIcon from '@mui/icons-material/Info';
 import Typography from '@mui/material/Typography';
 import Navbar from '../components/Navbar';
-import styles from './page.module.css';
+import Footer from '../components/Footer';
 import Image from 'next/image';
 import { ServiceData } from '../utils/ServiceData';
 import { Tooltip } from '@mui/material';
@@ -65,6 +64,7 @@ const Services = () => {
           ))}
         </ImageList>
       </Container>
+      <Footer />
     </>
   );
 };

@@ -7,12 +7,13 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Container from '@mui/material/Container';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import styles from './page.module.css';
 
 type Form = {
   text: string;
   email: string;
-  tel: number;
+  tel: string;
   message: string;
 };
 
@@ -80,6 +81,10 @@ const Contact = () => {
                   value: true,
                   message: 'メールアドレスを入力してください',
                 },
+                maxLength: {
+                  value: 10,
+                  message: '最大10文字です'
+                }
               }}
               render={({ field, formState: { errors } }) => (
                 <TextField
@@ -100,11 +105,16 @@ const Contact = () => {
             <Controller
               name="tel"
               control={control}
+              defaultValue=""
               rules={{
                 required: {
                   value: true,
                   message: '電話番号を入力してください',
                 },
+                maxLength: {
+                  value: 11,
+                  message: '11文字以内で入力してください。-(ハイフン)は不要です'
+                }
               }}
               render={({ field, formState: { errors } }) => (
                 <TextField
@@ -112,7 +122,7 @@ const Contact = () => {
                   required
                   fullWidth
                   id="tel"
-                  type="number"
+                  type="tel"
                   label="電話番号"
                   margin="dense"
                   error={errors.tel ? true : false}
@@ -131,13 +141,18 @@ const Contact = () => {
                   value: true,
                   message: 'お問い合わせ内容を入力してください',
                 },
+                maxLength: {
+                  value: 300,
+                  message: 'お問い合わせ内容は300文字以内で入力してください'
+                }
               }}
               render={({ field, formState: { errors } }) => (
                 <TextField
                   {...field}
                   required
                   fullWidth
-                  rows={10}
+                  multiline
+                  rows={5}
                   id="message"
                   type="text"
                   label="お問い合わせ内容"
@@ -149,12 +164,13 @@ const Contact = () => {
             />
           </Box>
           <Box sx={{ mt: 2 }} textAlign="left">
-            <Button variant="contained" onClick={handleSubmit(submit)}>
+            <Button variant="contained" onClick={handleSubmit(submit)} aria-label='送信'>
               送信
             </Button>
           </Box>
         </Box>
       </Container>
+      <Footer />
     </>
   );
 };
