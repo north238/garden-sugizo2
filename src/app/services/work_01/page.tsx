@@ -1,22 +1,32 @@
 import React from 'react';
+import Image from 'next/image';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button/Button';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import Image from 'next/image';
 import { ThemeProvider } from '@mui/material/styles';
 import { theme } from '@/app/styles/theme';
 
 const Work: React.FC = () => {
   return (
     <>
-      <Container fixed sx={{ mt: 10 }}>
+      <Container fixed sx={{ mt: 5 }}>
         <ThemeProvider theme={theme}>
-          <Typography variant="h5" sx={{ mt: 2, borderBottom: '1px solid' }}>
+          <Button
+            color="inherit"
+            href="/services"
+            startIcon={<ChevronLeftIcon />}
+            aria-label="servicesへ移動"
+          >
+            戻る
+          </Button>
+          <Typography variant="h5" sx={{ mt: 2, borderBottom: '1px solid #3a302d' }}>
             施工実績_01
           </Typography>
           <Box sx={{ mt: 2 }}>
             <Typography variant="body1">
-              カーポート下に雑草が生えないようにと要望をいただき、土間コンクリートを施工。
+              カーポート下に雑草が生えないようにと要望をいただき、土間コンクリートを施工いたしました。小さなことですが日々の雑草処理は大変です。メンテナンスの少ないお庭造りをしたい方にはおすすめです。
             </Typography>
           </Box>
         </ThemeProvider>

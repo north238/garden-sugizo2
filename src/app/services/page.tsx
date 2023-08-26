@@ -15,9 +15,9 @@ import { theme } from '../styles/theme';
 const Services = () => {
   return (
     <>
-      <Container>
+      <Container sx={{ mt: 5 }}>
         <ThemeProvider theme={theme}>
-          <Typography variant={'h5'} sx={{ borderBottom: '1px solid' }}>
+          <Typography variant={'h5'} sx={{ borderBottom: '1px solid #3a302d' }}>
             施工実績
           </Typography>
         </ThemeProvider>

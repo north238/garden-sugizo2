@@ -62,9 +62,9 @@ const Contact = () => {
   };
   return (
     <>
-      <Container maxWidth="xs">
+      <Container maxWidth="xs" sx={{mt: 5}}>
         <ThemeProvider theme={theme}>
-          <Typography variant="h5" sx={{ mt: 2, borderBottom: '1px solid' }}>
+          <Typography variant="h5" sx={{ mt: 2, borderBottom: '1px solid #3a302d' }}>
             お問い合わせ
           </Typography>
           <Box sx={{ mt: 2 }}>
@@ -174,10 +174,11 @@ const Contact = () => {
           <Box sx={{ mt: 2 }} textAlign="left">
             <Button
               variant="contained"
+              size='large'
               onClick={handleSubmit(onSubmit)}
-              aria-label="送信"
+              aria-label="送信する"
             >
-              送信
+              送信する
             </Button>
           </Box>
         </Box>

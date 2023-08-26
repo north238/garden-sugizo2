@@ -9,9 +9,9 @@ import { theme } from '../styles/theme';
 const Map: React.FC = () => {
   return (
     <>
-      <Container fixed>
+      <Container fixed sx={{mt: 5}}>
         <ThemeProvider theme={theme}>
-          <Typography variant="h5" sx={{ mt: 2, borderBottom: '1px solid' }}>
+          <Typography variant="h5" sx={{ mt: 2, borderBottom: '1px solid #3a302d' }}>
             対応エリア
           </Typography>
           <Box sx={{ mt: 2 }}>

@@ -62,108 +62,130 @@ export default function QAaccordions() {
   return (
     <div>
       <ThemeProvider theme={theme}>
-      <Accordion
-        expanded={expanded === 'panel1'}
-        onChange={handleChange('panel1')}
-      >
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1bh-content"
-          id="panel1bh-header"
+        <Accordion
+          expanded={expanded === 'panel1'}
+          onChange={handleChange('panel1')}
         >
-          <Typography
-            sx={{ width: '100%', flexShrink: 0, fontSize: { xs: 14 } }}
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1bh-content"
+            id="panel1bh-header"
           >
-            どのような依頼できるのですか？
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography sx={{ fontSize: { xs: 14 } }}>
-            お庭・外構工事、デザイン、植栽、庭木の剪定・伐採・抜根、草刈りなどです。
+            <Typography
+              sx={{ width: '100%', flexShrink: 0, fontSize: { xs: 14 } }}
+            >
+              どのような依頼できるのですか？
+            </Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography sx={{ fontSize: { xs: 14 } }}>
+              お庭・外構工事、デザイン、植栽、庭木の剪定・伐採・抜根、草刈りなどです。
+            </Typography>
             <Button
               sx={{ my: 2, fontSize: { xs: 12 } }}
+              color="inherit"
+              variant="outlined"
               href="/services"
-              variant="contained"
               endIcon={<NavigateNextIcon />}
               aria-label="servicesへ移動"
             >
-              read more
+              詳細ページへ
             </Button>
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion
-        expanded={expanded === 'panel2'}
-        onChange={handleChange('panel2')}
-      >
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2bh-content"
-          id="panel2bh-header"
+          </AccordionDetails>
+        </Accordion>
+        <Accordion
+          expanded={expanded === 'panel2'}
+          onChange={handleChange('panel2')}
         >
-          <Typography
-            sx={{ width: '100%', flexShrink: 0, fontSize: { xs: 14 } }}
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel2bh-content"
+            id="panel2bh-header"
           >
-            見積だけでもできますか？
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography sx={{ fontSize: { xs: 14 } }}>
-            もちろんです。無料でお見積りさせていただきます。どんなことでもご気軽にご相談下さい。
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion
-        expanded={expanded === 'panel3'}
-        onChange={handleChange('panel3')}
-      >
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel3bh-content"
-          id="panel3bh-header"
+            <Typography
+              sx={{ width: '100%', flexShrink: 0, fontSize: { xs: 14 } }}
+            >
+              見積だけでもできますか？
+            </Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography sx={{ fontSize: { xs: 14 } }}>
+              もちろんです。無料でお見積りさせていただきます。どんなことでもご気軽にご相談下さい。
+            </Typography>
+            <Button
+              sx={{ my: 2, fontSize: { xs: 12 } }}
+              href="/contact"
+              color="inherit"
+              variant="outlined"
+              endIcon={<NavigateNextIcon />}
+              aria-label="contactへ移動"
+            >
+              お問い合わせをする
+            </Button>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion
+          expanded={expanded === 'panel3'}
+          onChange={handleChange('panel3')}
         >
-          <Typography
-            sx={{ width: '100%', flexShrink: 0, fontSize: { xs: 14 } }}
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel3bh-content"
+            id="panel3bh-header"
           >
-            対応しているエリアはどこですか？
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography sx={{ fontSize: { xs: 14 } }}>
-            春日井市を中心に活動しています。隣接している市でも対応可能です。
+            <Typography
+              sx={{ width: '100%', flexShrink: 0, fontSize: { xs: 14 } }}
+            >
+              対応しているエリアはどこですか？
+            </Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography sx={{ fontSize: { xs: 14 } }}>
+              春日井市を中心に活動しています。隣接している市でも対応可能です。
+            </Typography>
             <Button
               sx={{ my: 2, fontSize: { xs: 12 } }}
               href="/map"
-              variant="contained"
+              color="inherit"
+              variant="outlined"
               endIcon={<NavigateNextIcon />}
               aria-label="mapへ移動"
             >
-              read more
+              詳細ページへ
             </Button>
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion
-        expanded={expanded === 'panel4'}
-        onChange={handleChange('panel4')}
-      >
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel4bh-content"
-          id="panel4bh-header"
+          </AccordionDetails>
+        </Accordion>
+        <Accordion
+          expanded={expanded === 'panel4'}
+          onChange={handleChange('panel4')}
         >
-          <Typography
-            sx={{ width: '100%', flexShrink: 0, fontSize: { xs: 14 } }}
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel4bh-content"
+            id="panel4bh-header"
           >
-            どれくらいの期間で施工できますか？
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography sx={{ fontSize: { xs: 14 } }}>
-            施工内容、環境より異なります。お客様のお庭を拝見させていただきお伝えいたします。ご気軽にお問い合わせください。
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
+            <Typography
+              sx={{ width: '100%', flexShrink: 0, fontSize: { xs: 14 } }}
+            >
+              どれくらいの期間で施工できますか？
+            </Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography sx={{ fontSize: { xs: 14 } }}>
+              施工内容、環境より異なります。お客様のお庭を拝見させていただきお伝えいたします。ご気軽にお問い合わせください。
+            </Typography>
+            <Button
+              sx={{ my: 2, fontSize: { xs: 12 } }}
+              href="/contact"
+              color="inherit"
+              variant="outlined"
+              endIcon={<NavigateNextIcon />}
+              aria-label="contactへ移動"
+            >
+              お問い合わせをする
+            </Button>
+          </AccordionDetails>
+        </Accordion>
       </ThemeProvider>
     </div>
   );

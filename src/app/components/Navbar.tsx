@@ -130,7 +130,7 @@ const Navbar = (props: Props) => {
             </Box>
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
               {setNavLinks.map((item) => (
-                <Button key={item.text} href={item.url} sx={{ color: '#fff' }}>
+                <Button color='inherit' key={item.text} href={item.url} sx={{ color: '#fff' }}>
                   {item.text}
                 </Button>
               ))}

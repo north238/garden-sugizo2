@@ -1,10 +1,10 @@
 import './styles/globals.css';
-import { notojp } from './utils/font';
 import type { Metadata } from 'next';
-import Toolbar from '@mui/material/Toolbar';
 import { Inter } from 'next/font/google';
+import Toolbar from '@mui/material/Toolbar';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import { notojp } from './utils/font';
 
 const inter = Inter({ subsets: ['latin'] });
 
