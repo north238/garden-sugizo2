@@ -6,11 +6,8 @@ import ContactMailIcon from '@mui/icons-material/ContactMail';
 import Grid from '@mui/material/Grid';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import PhoneForwardedOutlinedIcon from '@mui/icons-material/PhoneForwardedOutlined';
-import Typography from '@mui/material/Typography';
-import Navbar from './components/Navbar';
 import ImageSlider from './components/ImageSlider';
 import FadeAnimation from './components/FadeAnimation';
-import Footer from './components/Footer';
 import QAaccordions from './components/QAaccordions';
 import { SliderData } from './utils/SliderData';
 import { notojp } from './utils/font';
@@ -20,7 +17,6 @@ import styles from './styles/page.module.css';
 export default function Page() {
   return (
     <>
-      <Navbar />
       <Box sx={{ flexGrow: 1 }}>
         <Grid
           container
@@ -39,7 +35,7 @@ export default function Page() {
                 objectFit: 'cover',
               }}
               src="/image/home.jpeg"
-              alt={'home image'}
+              alt={'ホーム画像'}
             />
             <h6 className={styles.heroSubTitle}>Garden-sugizo</h6>
             <h2 className={styles.heroMainTitle}>庭屋すぎ蔵</h2>
@@ -69,7 +65,7 @@ export default function Page() {
                 >
                   <Image
                     src={'/image/img_13.jpg'}
-                    alt={'About image'}
+                    alt={'私たちについての画像'}
                     width={1980}
                     height={1150}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -117,7 +113,7 @@ export default function Page() {
                   href="/about"
                   variant="contained"
                   endIcon={<NavigateNextIcon />}
-                  aria-label="read more"
+                  aria-label="aboutへ移動"
                 >
                   read more
                 </Button>
@@ -139,9 +135,7 @@ export default function Page() {
             </Box>
           </Box>
           <FadeAnimation rootMargin="-50px" animation="fadeIn" triggerOnce>
-            <Box className={styles.slider}>
-              <ImageSlider slides={SliderData} />
-            </Box>
+            <ImageSlider slides={SliderData} />
           </FadeAnimation>
           <Box
             component={'h2'}
@@ -199,6 +193,7 @@ export default function Page() {
                 color="success"
                 href="/contact"
                 startIcon={<ContactMailIcon />}
+                aria-label="contactへ移動"
               >
                 お問い合わせ
               </Button>
@@ -212,6 +207,7 @@ export default function Page() {
                 color="success"
                 href="tel:+0568-50-2621"
                 startIcon={<PhoneForwardedOutlinedIcon />}
+                aria-label="電話をする"
               >
                 0568-50-2621
               </Button>
@@ -222,7 +218,6 @@ export default function Page() {
           </Grid>
         </Grid>
       </Container>
-      <Footer />
     </>
   );
 }

@@ -3,9 +3,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 1160px;
+  height: 100%;
 }
 
-.rightArrow, .leftArrow {
+.rightArrow,
+.leftArrow {
   position: absolute;
   top: 50%;
   right: 32px;
@@ -14,7 +17,7 @@
   border: 1px solid #edf2f7;
   border-radius: 100%;
   background-color: #edf2f7;
-  opacity: .8;
+  opacity: 0.8;
   z-index: 10;
   cursor: pointer;
   user-select: none;
@@ -40,17 +43,18 @@
 }
 
 .slideNext {
-  opacity: 0; /* 非表示にするスライド */
-  transform: translateX(100%); /* 画面外へ移動 */
+  opacity: 0;
+  transform: translateX(100%);
 }
 
 .slidePrev {
-  opacity: 0; /* 非表示にするスライド */
-  transform: translateX(-100%); /* 画面外へ移動 */
+  opacity: 0;
+  transform: translateX(-100%);
 }
 
 @media screen and (max-width: 600px) {
-  .rightArrow, .leftArrow {
+  .rightArrow,
+  .leftArrow {
     font-size: 1.75rem;
   }
 }

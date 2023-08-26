@@ -6,20 +6,21 @@ import ImageListItemBar from '@mui/material/ImageListItemBar';
 import IconButton from '@mui/material/IconButton';
 import InfoIcon from '@mui/icons-material/Info';
 import Typography from '@mui/material/Typography';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import Image from 'next/image';
 import { ServiceData } from '../utils/ServiceData';
 import { Tooltip } from '@mui/material';
+import { ThemeProvider } from '@mui/material/styles';
+import { theme } from '../styles/theme';
 
 const Services = () => {
   return (
     <>
-      <Navbar />
-      <Container sx={{ mt: 10 }}>
-        <Typography variant={'h5'} sx={{ borderBottom: '1px solid' }}>
-          施工実績
-        </Typography>
+      <Container>
+        <ThemeProvider theme={theme}>
+          <Typography variant={'h5'} sx={{ borderBottom: '1px solid' }}>
+            施工実績
+          </Typography>
+        </ThemeProvider>
         <ImageList
           gap={4}
           sx={{
@@ -49,10 +50,10 @@ const Services = () => {
                 actionIcon={
                   <IconButton
                     sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
-                    aria-label={`info about ${item.title}`}
+                    aria-label={`${item.title}の詳細へ移動`}
                     href={`${item.url}`}
                   >
-                    <Tooltip title='詳細を表示'>
+                    <Tooltip title="詳細を表示">
                       <InfoIcon />
                     </Tooltip>
                   </IconButton>
@@ -63,7 +64,6 @@ const Services = () => {
           ))}
         </ImageList>
       </Container>
-      <Footer />
     </>
   );
 };

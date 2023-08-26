@@ -29,8 +29,8 @@ const ImageSlider: React.FC<slidesProps> = ({ slides }) => {
 
   return (
     <section className={styles.slider}>
-      <ChevronLeftIcon className={styles.leftArrow} onClick={prevSlide} />
-      <NavigateNextIcon className={styles.rightArrow} onClick={nextSlide} />
+      <ChevronLeftIcon className={styles.leftArrow} onClick={prevSlide} aria-label="戻るボタン" />
+      <NavigateNextIcon className={styles.rightArrow} onClick={nextSlide} aria-label="進むボタン" />
       {SliderData.map((slide, index) => {
         return (
           <div
@@ -50,7 +50,7 @@ const ImageSlider: React.FC<slidesProps> = ({ slides }) => {
             {index === current && (
               <Image
                 src={slide.image}
-                alt="services image"
+                alt="施工実績画像"
                 width={1980}
                 height={1150}
                 style={{

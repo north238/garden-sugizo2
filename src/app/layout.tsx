@@ -1,7 +1,10 @@
 import './styles/globals.css';
 import { notojp } from './utils/font';
 import type { Metadata } from 'next';
+import Toolbar from '@mui/material/Toolbar';
 import { Inter } from 'next/font/google';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,7 +21,12 @@ export default function RootLayout({
 }) {
   return (
     <html className={`${notojp.variable}`}>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Navbar />
+        <Toolbar id="back-to-top-anchor" />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

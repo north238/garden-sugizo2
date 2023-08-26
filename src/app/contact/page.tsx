@@ -1,60 +1,98 @@
 'use client';
 
 import React from 'react';
-import { Controller, useForm } from 'react-hook-form';
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useRouter } from 'next/navigation';
+import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
 import Container from '@mui/material/Container';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import styles from './page.module.css';
+import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
+import { ThemeProvider } from '@mui/material/styles';
+import { theme } from '../styles/theme';
 
 type Form = {
-  text: string;
+  name: string;
   email: string;
   tel: string;
   message: string;
 };
 
-const Contact = () => {
-  const { control, handleSubmit } = useForm<Form>();
+const contactSchema = yup.object().shape({
+  name: yup.string().trim().required('お名前の入力は必須です'),
+  email: yup
+    .string()
+    .trim()
+    .email('メールアドレスの形式で入力してください。')
+    .required('メールアドレスの入力は必須です'),
+  tel: yup
+    .string()
+    .trim()
+    .required('電話番号の入力は必須です')
+    .matches(/^[0-9]*$/, { message: '半角数字で入力してください' }),
+  message: yup
+    .string()
+    .trim()
+    .required('お問い合わせ内容の入力は必須です')
+    .max(1000, '1000文字以内で入力してください'),
+});
 
-  const submit = (data: any) => {
-    console.log(data);
+const Contact = () => {
+  const router = useRouter();
+
+  const { control, handleSubmit } = useForm<Form>({
+    resolver: yupResolver(contactSchema),
+  });
+
+  const onSubmit: SubmitHandler<Form> = async (data) => {
+    const response = await fetch('api/sendMail', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    if (response.status === 200) {
+      router.push('/complete');
+    } else {
+      alert('正常に送信できませんでした');
+    }
   };
   return (
     <>
-      <Navbar />
-      <Container maxWidth="xs" sx={{ mt: 10 }}>
-        <Box display={'flex'} flexDirection={'column'} alignItems={'center'}>
-          <h4 className={styles.title}>お問い合わせ</h4>
-          <p className={styles.p}>
-            お問い合わせは下記のフォームからご連絡ください。
-            原則２営業日以内に折り返しのご連絡をいたします。
-            ※現在、事務所での打ち合わせは行っておりません。
-            現地でのお打ち合わせのみとなります。 ご了承ください。
-          </p>
-        </Box>
+      <Container maxWidth="xs">
+        <ThemeProvider theme={theme}>
+          <Typography variant="h5" sx={{ mt: 2, borderBottom: '1px solid' }}>
+            お問い合わせ
+          </Typography>
+          <Box sx={{ mt: 2 }}>
+            <Typography variant="body1">
+              お問い合わせは下記のフォームからご連絡ください。
+              原則２営業日以内に折り返しのご連絡をいたします。
+              ※現在、事務所での打ち合わせは行っておりません。
+              現地でのお打ち合わせのみとなります。 ご了承ください。{' '}
+            </Typography>
+          </Box>
+        </ThemeProvider>
         <Box
           component="form"
           sx={{
+            mt: 2,
             width: '100%',
             display: 'flex',
             alignContent: 'center',
             flexDirection: 'column',
           }}
-          onSubmit={handleSubmit(submit)}
+          onSubmit={handleSubmit(onSubmit)}
           autoComplete="off"
         >
           <Box>
             <Controller
-              name="text"
+              name="name"
               control={control}
               defaultValue=""
-              rules={{
-                required: { value: true, message: 'お名前を入力してください' },
-              }}
               render={({ field, formState: { errors } }) => (
                 <TextField
                   {...field}
@@ -65,8 +103,8 @@ const Contact = () => {
                   type="text"
                   label="お名前"
                   margin="dense"
-                  error={errors.text ? true : false}
-                  helperText={errors.text?.message as string}
+                  error={errors.name ? true : false}
+                  helperText={errors.name?.message as string}
                 />
               )}
             />
@@ -76,16 +114,6 @@ const Contact = () => {
               name="email"
               control={control}
               defaultValue=""
-              rules={{
-                required: {
-                  value: true,
-                  message: 'メールアドレスを入力してください',
-                },
-                maxLength: {
-                  value: 10,
-                  message: '最大10文字です'
-                }
-              }}
               render={({ field, formState: { errors } }) => (
                 <TextField
                   {...field}
@@ -106,16 +134,6 @@ const Contact = () => {
               name="tel"
               control={control}
               defaultValue=""
-              rules={{
-                required: {
-                  value: true,
-                  message: '電話番号を入力してください',
-                },
-                maxLength: {
-                  value: 11,
-                  message: '11文字以内で入力してください。-(ハイフン)は不要です'
-                }
-              }}
               render={({ field, formState: { errors } }) => (
                 <TextField
                   {...field}
@@ -136,16 +154,6 @@ const Contact = () => {
               name="message"
               control={control}
               defaultValue=""
-              rules={{
-                required: {
-                  value: true,
-                  message: 'お問い合わせ内容を入力してください',
-                },
-                maxLength: {
-                  value: 300,
-                  message: 'お問い合わせ内容は300文字以内で入力してください'
-                }
-              }}
               render={({ field, formState: { errors } }) => (
                 <TextField
                   {...field}
@@ -164,13 +172,16 @@ const Contact = () => {
             />
           </Box>
           <Box sx={{ mt: 2 }} textAlign="left">
-            <Button variant="contained" onClick={handleSubmit(submit)} aria-label='送信'>
+            <Button
+              variant="contained"
+              onClick={handleSubmit(onSubmit)}
+              aria-label="送信"
+            >
               送信
             </Button>
           </Box>
         </Box>
       </Container>
-      <Footer />
     </>
   );
 };

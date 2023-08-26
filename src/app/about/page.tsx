@@ -3,40 +3,42 @@ import Button from '@mui/material/Button/Button';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import PhoneForwardedOutlinedIcon from '@mui/icons-material/PhoneForwardedOutlined';
-import Navbar from '../components/Navbar';
 import styles from './page.module.css';
 import Image from 'next/image';
 import Typography from '@mui/material/Typography';
+import { ThemeProvider } from '@mui/material/styles';
+import { theme } from '../styles/theme';
 
 const About: React.FC = () => {
   return (
     <>
-      <Navbar />
-      <Container fixed sx={{ mt: 10 }}>
-      <Typography variant={'h5'} sx={{borderBottom: '1px solid'}}>
-          私たちについて
-        </Typography>
-        <Box sx={{ mt: 2}}>
-          <Image
-            src={'/image/img_13.jpg'}
-            alt={'About Image'}
-            width={1980}
-            height={1150}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            style={{
-              width: '100%',
-              height: 'auto',
-              boxShadow: '5px 5px 5px rgba(20,20,20,.7)',
-              border: '1px solid #3a302d',
-              borderRadius: '10px',
-            }}
-          />
-        </Box>
-        <Box sx={{mt: 5}}>
-        <Typography variant="body1">
-          私たちは春日井市を中心に活動しています。2022年に独立、起業し個人で活動。お客様一人ひとりとの関係を大切にし、お客様に寄りそった提案を心がけております。個人で経営しているからこそ柔軟に対応できることが強みと感じています。どんな小さな困りごとにも対応します。ご気軽にお声掛けください。
-        </Typography>
-        </Box>
+      <Container fixed>
+        <ThemeProvider theme={theme}>
+          <Typography variant={'h5'} sx={{ borderBottom: '1px solid' }}>
+            私たちについて
+          </Typography>
+          <Box sx={{ mt: 2 }}>
+            <Image
+              src={'/image/img_13.jpg'}
+              alt={'About Image'}
+              width={1980}
+              height={1150}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              style={{
+                width: '100%',
+                height: 'auto',
+                boxShadow: '5px 5px 5px rgba(20,20,20,.7)',
+                border: '1px solid #3a302d',
+                borderRadius: '10px',
+              }}
+            />
+          </Box>
+          <Box sx={{ mt: 5 }}>
+            <Typography variant="body1">
+              私たちは春日井市を中心に活動しています。2022年に独立、起業し個人で活動。お客様一人ひとりとの関係を大切にし、お客様に寄りそった提案を心がけております。個人で経営しているからこそ柔軟に対応できることが強みと感じています。どんな小さな困りごとにも対応します。ご気軽にお声掛けください。
+            </Typography>
+          </Box>
+        </ThemeProvider>
         <Box sx={{ mt: 5 }}>
           <table className={styles.table}>
             <tbody>

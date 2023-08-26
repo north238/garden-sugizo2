@@ -2,23 +2,24 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import Navbar from '@/app/components/Navbar';
-import Footer from '@/app/components/Footer';
 import Image from 'next/image';
+import { ThemeProvider } from '@mui/material/styles';
+import { theme } from '@/app/styles/theme';
 
 const Work: React.FC = () => {
   return (
     <>
-      <Navbar />
       <Container fixed sx={{ mt: 10 }}>
-        <Typography variant="h5" sx={{ mt: 2, borderBottom: '1px solid' }}>
-          施工実績_03
-        </Typography>
-        <Box sx={{ mt: 2 }}>
-          <Typography variant="body1">
-            芝の一部を剥ぎ取りタイルデッキを施工しました。
+        <ThemeProvider theme={theme}>
+          <Typography variant="h5" sx={{ mt: 2, borderBottom: '1px solid' }}>
+            施工実績_03
           </Typography>
-        </Box>
+          <Box sx={{ mt: 2 }}>
+            <Typography variant="body1">
+              芝の一部を剥ぎ取りタイルデッキを施工しました。
+            </Typography>
+          </Box>
+        </ThemeProvider>
         <Box sx={{ mt: 2 }}>
           <Image
             src={'/image/img_03.jpg'}
@@ -30,13 +31,10 @@ const Work: React.FC = () => {
               width: '100%',
               height: 'auto',
               boxShadow: '5px 5px 5px rgba(20,20,20,.7)',
-              border: '1px solid #3a302d',
-              borderRadius: '10px',
             }}
           />
         </Box>
       </Container>
-      <Footer />
     </>
   );
 };

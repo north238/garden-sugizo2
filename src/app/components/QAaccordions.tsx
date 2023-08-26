@@ -12,7 +12,6 @@ import Button from '@mui/material/Button/Button';
 import Typography from '@mui/material/Typography';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { notojp } from '../utils/font';
 import { ThemeProvider } from '@mui/material/styles';
 import { theme } from '../styles/theme';
 
@@ -86,7 +85,7 @@ export default function QAaccordions() {
               href="/services"
               variant="contained"
               endIcon={<NavigateNextIcon />}
-              aria-label="read more"
+              aria-label="servicesへ移動"
             >
               read more
             </Button>
@@ -137,7 +136,7 @@ export default function QAaccordions() {
               href="/map"
               variant="contained"
               endIcon={<NavigateNextIcon />}
-              aria-label="read more"
+              aria-label="mapへ移動"
             >
               read more
             </Button>

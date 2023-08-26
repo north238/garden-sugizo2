@@ -64,15 +64,8 @@
 
 .aboutImage {
   max-width: 900px;
-  overflow: hidden;
   height: auto;
 }
-
-.slider {
-  max-width: 1200px;
-  height: auto;
-}
-
 
 @media screen and (max-width: 600px) {
   .p {
