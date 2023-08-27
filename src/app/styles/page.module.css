@@ -43,25 +43,6 @@
   font-size: 1rem;
 }
 
-.subTitle,
-.mainTitle {
-  padding: 0;
-  margin: 0;
-}
-
-.mainTitle {
-  border-bottom: 1px solid #3a302d;
-}
-
-.subTitle {
-  color: blue;
-  font-size: .9rem;
-}
-
-.p {
-  font-size: .9rem;
-}
-
 .aboutImage {
   max-width: 900px;
   height: auto;

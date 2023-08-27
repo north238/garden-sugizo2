@@ -12,6 +12,9 @@ import QAaccordions from './components/QAaccordions';
 import { SliderData } from './utils/SliderData';
 import { notojp } from './utils/font';
 import { QAIcon } from './components/Icon';
+import Typography from '@mui/material/Typography';
+import { ThemeProvider } from '@mui/material/styles';
+import { theme } from './styles/theme';
 import styles from './styles/page.module.css';
 
 export default function Page() {
@@ -49,13 +52,23 @@ export default function Page() {
           <Grid container spacing={2}>
             <Grid item md={6}>
               <Box sx={{ pb: 3, display: 'flex', flexDirection: 'column' }}>
-                <h6 className={styles.subTitle}>About</h6>
-                <h2 className={styles.mainTitle}>
-                  <span>私たちについて</span>
-                </h2>
-                <p className={styles.p}>
-                  庭屋すぎ蔵のホームページをご覧いただき有難うございます。私たちは個人でお庭まわりの工事を施工しています。
-                </p>
+                <ThemeProvider theme={theme}>
+                  <Typography variant="subtitle2" sx={{ color: '#0072E5' }}>
+                    About
+                  </Typography>
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      fontWeight: 'bold',
+                      borderBottom: '1px solid #3a302d',
+                    }}
+                  >
+                    私たちについて
+                  </Typography>
+                  <Typography variant="body2" sx={{ mt: 2 }}>
+                    庭屋すぎ蔵のホームページをご覧いただき有難うございます。私たちは個人でお庭まわりの工事を施工しています。
+                  </Typography>
+                </ThemeProvider>
               </Box>
               <Box className={styles.aboutImage}>
                 <FadeAnimation
@@ -93,21 +106,29 @@ export default function Page() {
                   大切にしていること
                 </Box>
                 <Box sx={{ px: { xs: 4, md: 10 } }}>
-                  <Box sx={{ fontSize: { xs: '.9rem' } }}>
-                    <ul>
-                      <li>
-                        お施主様とのこれまでと、これからの出会いに感謝し、お一人おひとりに最高のご提案をしたい
-                      </li>
-                      <li>お施主様と友人のような関係になりたい</li>
-                    </ul>
+                  <Box>
+                    <ThemeProvider theme={theme}>
+                      <Typography component="div" sx={{ fontSize:'.9rem' }}>
+                        <ul>
+                          <li>
+                            お施主様とのこれまでと、これからの出会いに感謝し、お一人おひとりに最高のご提案をしたい
+                          </li>
+                          <li>お施主様と友人のような関係になりたい</li>
+                        </ul>
+                      </Typography>
+                    </ThemeProvider>
                   </Box>
                 </Box>
-                <Box sx={{ p: { xs: 4, md: 10 }, fontSize: { xs: '.9rem' } }}>
-                  フランクに会話するという事ではなく、損得勘定を抜きにして、お施主様にとって1番良い選択をさせて頂きたい。
-                  <br />
-                  <br />
-                  もし、私たちにとって大きな利益が生まれそうでも、将来的に問題のありそうな工事、商品は売りません。
-                  友人のような関係だからこそできるアドバイスがあります。
+                <Box sx={{ p: { xs: 4, md: 10 }}}>
+                  <ThemeProvider theme={theme}>
+                    <Typography variant="body2" sx={{ mt: 2 }}>
+                      フランクに会話するという事ではなく、損得勘定を抜きにして、お施主様にとって一番良い選択をさせて頂きたい。
+                      <br />
+                      <br />
+                      もし、私たちにとって大きな利益が生まれそうでも、将来的に問題のありそうな工事、商品は売りません。
+                      友人のような関係だからこそできるアドバイスがあります。
+                    </Typography>
+                  </ThemeProvider>
                 </Box>
                 <Button
                   href="/about"
@@ -124,15 +145,25 @@ export default function Page() {
 
         <Box sx={{ mt: 10 }}>
           <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-            <h6 className={styles.subTitle}>Services</h6>
-            <h2 className={styles.mainTitle}>できること</h2>
-            <Box sx={{ px: { xs: 4, md: 10 } }}>
-              <p className={styles.p}>
-                『庭木の剪定・植栽』から『造園デザイン』まで
-                外構・エクステリア工事なども施工しております。
-                お庭のことならすべてお任せください。
-              </p>
-            </Box>
+            <ThemeProvider theme={theme}>
+              <Typography variant="subtitle2" sx={{ color: '#0072E5' }}>
+                Services
+              </Typography>
+              <Typography
+                variant="h5"
+                sx={{ fontWeight: 'bold', borderBottom: '1px solid #3a302d' }}
+              >
+                できること
+              </Typography>
+              <Box sx={{ px: { xs: 2, md: 6 }, mb: 2 }}>
+                <Typography variant="body2" sx={{ mt: 2 }}>
+                  『庭木の剪定・植栽』から『外構・エクステリア工事』『造園デザイン』まで
+                  自社ですべての外構工事を施工しております。
+                  <br />
+                  お庭のことならすべてお任せください。
+                </Typography>
+              </Box>
+            </ThemeProvider>
           </Box>
           <FadeAnimation rootMargin="-50px" animation="fadeIn" triggerOnce>
             <ImageSlider slides={SliderData} />
@@ -150,10 +181,17 @@ export default function Page() {
         </Box>
 
         <Box component={'section'} sx={{ mt: 10 }}>
-          <h6 className={styles.subTitle}>Contact</h6>
-          <h2 className={styles.mainTitle}>
-            <span>お問い合わせ</span>
-          </h2>
+          <ThemeProvider theme={theme}>
+            <Typography variant="subtitle2" sx={{ color: '#0072E5' }}>
+              Contact
+            </Typography>
+            <Typography
+              variant="h5"
+              sx={{ fontWeight: 'bold', borderBottom: '1px solid #3a302d' }}
+            >
+              お問い合わせ
+            </Typography>
+          </ThemeProvider>
         </Box>
         <Grid
           container
@@ -164,13 +202,15 @@ export default function Page() {
           spacing={2}
         >
           <Grid item md={6}>
-            <Box sx={{ px: 5 }}>
-              <p className={styles.p}>
-                お庭まわりでお困りの方...
-                あなたに寄りそったご提案をさせていただきます。
-                もちろん、庭木１本からでも大丈夫です。
-                どんなことでもお気軽にお問い合わせください。
-              </p>
+            <Box sx={{ px: 2 }}>
+              <ThemeProvider theme={theme}>
+                <Typography variant="body2">
+                  お庭まわりでお困りの方...
+                  あなたに寄りそったご提案をさせていただきます。
+                  雑草除去や庭木一本の剪定からでも喜んでお受けいたします。
+                  どんなことでもお気軽にお問い合わせください。
+                </Typography>
+              </ThemeProvider>
             </Box>
           </Grid>
           <Grid item md={6}>
@@ -180,7 +220,7 @@ export default function Page() {
                 flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'center',
-                px: { xs: 4, md: 10 },
+                px: { xs: 2, md: 5 },
               }}
             >
               <Box component={'h3'} sx={{ fontSize: { xs: 17 } }}>
@@ -211,9 +251,11 @@ export default function Page() {
               >
                 0568-50-2621
               </Button>
-              <p className={styles.p}>
-                ※受付時間 8:00～18:00 (お盆、年末年始除く)
-              </p>
+              <ThemeProvider theme={theme}>
+                <Typography variant="body2" sx={{ mt: 2 }}>
+                  ※受付時間 8:00～18:00 (お盆、年末年始除く)
+                </Typography>
+              </ThemeProvider>
             </Box>
           </Grid>
         </Grid>

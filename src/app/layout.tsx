@@ -1,6 +1,7 @@
 import './styles/globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import CssBaseline from '@mui/material/CssBaseline';
 import Toolbar from '@mui/material/Toolbar';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -22,6 +23,7 @@ export default function RootLayout({
   return (
     <html className={`${notojp.variable}`}>
       <body className={inter.className}>
+        <CssBaseline />
         <Navbar />
         <Toolbar id="back-to-top-anchor" />
         {children}

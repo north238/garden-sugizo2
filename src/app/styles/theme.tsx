@@ -5,6 +5,6 @@ import { notojp } from "../utils/font";
 
 export const theme: Theme = createTheme({
   typography: {
-    fontFamily: notojp.style.fontFamily
+    fontFamily: notojp.style.fontFamily,
   },
 })
