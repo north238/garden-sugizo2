@@ -41,13 +41,12 @@ const contactSchema = yup.object().shape({
 
 const Contact = () => {
   const router = useRouter();
-
   const { control, handleSubmit } = useForm<Form>({
     resolver: yupResolver(contactSchema),
   });
 
   const onSubmit: SubmitHandler<Form> = async (data) => {
-    const response = await fetch('api/sendMail', {
+    const response: Response = await fetch('api/email', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -55,16 +54,21 @@ const Contact = () => {
       body: JSON.stringify(data),
     });
     if (response.status === 200) {
+      response.json();
       router.push('/complete');
     } else {
       alert('正常に送信できませんでした');
     }
   };
+
   return (
     <>
-      <Container maxWidth="xs" sx={{mt: 5}}>
+      <Container maxWidth="xs" sx={{ mt: 5 }}>
         <ThemeProvider theme={theme}>
-          <Typography variant="h5" sx={{ mt: 2, borderBottom: '1px solid #3a302d' }}>
+          <Typography
+            variant="h5"
+            sx={{ mt: 2, borderBottom: '1px solid #3a302d' }}
+          >
             お問い合わせ
           </Typography>
           <Box sx={{ mt: 2 }}>
@@ -174,7 +178,7 @@ const Contact = () => {
           <Box sx={{ mt: 2 }} textAlign="left">
             <Button
               variant="contained"
-              size='large'
+              size="large"
               onClick={handleSubmit(onSubmit)}
               aria-label="送信する"
             >

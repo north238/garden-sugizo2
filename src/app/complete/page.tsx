@@ -8,7 +8,7 @@ import { theme } from '../styles/theme';
 const Complete = () => {
   return (
     <>
-      <Container fixed sx={{mt: 5}}>
+      <Container maxWidth="xs" sx={{mt: 5}}>
         <ThemeProvider theme={theme}>
           <Typography variant="h5" sx={{ mt: 2, borderBottom: '1px solid #3a302d' }}>
             内容確認
