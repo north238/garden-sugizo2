@@ -60,7 +60,7 @@ const Footer = () => {
               sx={{ fontSize: 13, fontFamily: notojp }}
               size="large"
               color="success"
-              href="mailto:info@garden-sugizo.com"
+              href="mailto:info@garden-sugizo.website"
               startIcon={<ContactMailIcon />}
               aria-label="メールを送る"
             >

@@ -11,6 +11,7 @@ export async function POST(request: Request) {
     const data = await resend.emails.send({
       from: '高杉 竜平 <info@garden-sugizo.website>',
       to: email,
+      bcc: process.env.YOUR_EMAIL,
       subject: '【庭屋すぎ蔵】お問い合わせ内容の確認',
       react: Email({ email, name, message, tel }),
     });

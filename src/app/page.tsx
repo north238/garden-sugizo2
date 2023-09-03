@@ -108,7 +108,7 @@ export default function Page() {
                 <Box sx={{ px: { xs: 4, md: 10 } }}>
                   <Box>
                     <ThemeProvider theme={theme}>
-                      <Typography component="div" sx={{ fontSize:'.9rem' }}>
+                      <Typography component="div" sx={{ fontSize: '.9rem' }}>
                         <ul>
                           <li>
                             お施主様とのこれまでと、これからの出会いに感謝し、お一人おひとりに最高のご提案をしたい
@@ -119,7 +119,7 @@ export default function Page() {
                     </ThemeProvider>
                   </Box>
                 </Box>
-                <Box sx={{ p: { xs: 4, md: 10 }}}>
+                <Box sx={{ p: { xs: 4, md: 10 } }}>
                   <ThemeProvider theme={theme}>
                     <Typography variant="body2" sx={{ mt: 2 }}>
                       フランクに会話するという事ではなく、損得勘定を抜きにして、お施主様にとって一番良い選択をさせて頂きたい。
@@ -211,6 +211,20 @@ export default function Page() {
                   どんなことでもお気軽にお問い合わせください。
                 </Typography>
               </ThemeProvider>
+            </Box>
+            <Box sx={{ mt: 2, px: 5 }}>
+              <Image
+                src={'/image/contact_img_by_adomas-aleno.jpg'}
+                alt={'私たちについての画像'}
+                width={1980}
+                height={1150}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  boxShadow: '5px 5px 5px rgba(20,20,20,.7)',
+                }}
+              />
             </Box>
           </Grid>
           <Grid item md={6}>
