@@ -215,7 +215,7 @@ export default function Page() {
             <Box sx={{ mt: 2, px: 5 }}>
               <Image
                 src={'/image/contact_img_by_adomas-aleno.jpg'}
-                alt={'私たちについての画像'}
+                alt={'お問い合わせ画像'}
                 width={1980}
                 height={1150}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
