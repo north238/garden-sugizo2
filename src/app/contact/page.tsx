@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useRouter } from 'next/navigation';
@@ -12,6 +12,7 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import { ThemeProvider } from '@mui/material/styles';
 import { theme } from '../styles/theme';
+import Loading from './loading';
 
 type Form = {
   name: string;
@@ -40,24 +41,36 @@ const contactSchema = yup.object().shape({
 });
 
 const Contact = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
   const { control, handleSubmit } = useForm<Form>({
     resolver: yupResolver(contactSchema),
   });
 
   const onSubmit: SubmitHandler<Form> = async (data) => {
-    const response: Response = await fetch('api/email', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    });
-    if (response.status === 200) {
-      response.json();
-      router.push('/complete');
-    } else {
-      alert('正常に送信できませんでした');
+    setIsLoading(true);
+    try {
+      const response: Response = await fetch('api/email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.status === 200) {
+        try {
+          const responseData = await response.json();
+          console.log(responseData);
+          router.push('/complete');
+        } catch (error) {
+          console.error('レスポンスデータの解析エラー:', error);
+        }
+      } else {
+        alert('正常に送信できませんでした');
+      }
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -176,14 +189,18 @@ const Contact = () => {
             />
           </Box>
           <Box sx={{ mt: 2 }} textAlign="left">
-            <Button
-              variant="contained"
-              size="large"
-              onClick={handleSubmit(onSubmit)}
-              aria-label="送信する"
-            >
-              送信する
-            </Button>
+            {isLoading ? (
+              <Loading />
+            ) : (
+              <Button
+                variant="contained"
+                size="large"
+                onClick={handleSubmit(onSubmit)}
+                aria-label="送信する"
+              >
+                送信する
+              </Button>
+            )}
           </Box>
         </Box>
       </Container>
