@@ -26,7 +26,7 @@ const Footer = () => {
         }}
       >
         <ThemeProvider theme={theme}>
-          <Typography  variant="h4" sx={{ mb: 3 }}>
+          <Typography variant="h4" sx={{ mb: 3 }}>
             庭屋すぎ蔵
           </Typography>
           <Typography variant="body2" sx={{ m: 1 }}>
@@ -44,52 +44,52 @@ const Footer = () => {
             }}
           >
             <Box>
-            <Button
-              sx={{ fontSize: 13, fontFamily: notojp }}
-              size="small"
-              color="success"
-              href="tel:+0568-50-2621"
-              startIcon={<PhoneForwardedOutlinedIcon />}
-              aria-label="電話をする"
-            >
-              電話でお問い合わせ
-            </Button>
+              <Button
+                sx={{ fontSize: 13, fontFamily: notojp }}
+                size="small"
+                color="success"
+                href="tel:+0568-50-2621"
+                startIcon={<PhoneForwardedOutlinedIcon />}
+                aria-label="電話をする"
+              >
+                電話でお問い合わせ
+              </Button>
             </Box>
             <Box>
-            <Button
-              sx={{ fontSize: 13, fontFamily: notojp }}
-              size="large"
-              color="success"
-              href="mailto:info@garden-sugizo.website"
-              startIcon={<ContactMailIcon />}
-              aria-label="メールを送る"
-            >
-              メールでお問い合わせ
-            </Button>
+              <Button
+                sx={{ fontSize: 13, fontFamily: notojp }}
+                size="large"
+                color="success"
+                href="mailto:info@garden-sugizo.website"
+                startIcon={<ContactMailIcon />}
+                aria-label="メールを送る"
+              >
+                メールでお問い合わせ
+              </Button>
             </Box>
             <Box>
-            <Button
-              sx={{ fontSize: 13, fontFamily: notojp }}
-              size="large"
-              color="success"
-              href="https://lin.ee/AsKUoin"
-              startIcon={<LineIcon />}
-              aria-label="友達に追加する"
-            >
-              友達に追加
-            </Button>
+              <Button
+                sx={{ fontSize: 13, fontFamily: notojp }}
+                size="large"
+                color="success"
+                href="https://lin.ee/AsKUoin"
+                startIcon={<LineIcon />}
+                aria-label="友達に追加する"
+              >
+                友達に追加
+              </Button>
             </Box>
             <Box>
-            <Button
-              sx={{ fontSize: 13, fontFamily: notojp }}
-              size="large"
-              color="success"
-              href="https://www.instagram.com/sugizo_garden/"
-              startIcon={<InstagramIcon />}
-              aria-label="Instagramへ移動"
-            >
-              Instagramを見る
-            </Button>
+              <Button
+                sx={{ fontSize: 13, textTransform: 'none', fontFamily: notojp }}
+                size="large"
+                color="success"
+                href="https://www.instagram.com/sugizo_garden/"
+                startIcon={<InstagramIcon />}
+                aria-label="Instagramへ移動"
+              >
+                Instagramを見る
+              </Button>
             </Box>
             <Typography variant="caption" display="block" sx={{ mt: 1 }}>
               &copy; 2022 庭屋すぎ蔵
