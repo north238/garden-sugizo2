@@ -135,8 +135,9 @@ export default function Page() {
                   variant="contained"
                   endIcon={<NavigateNextIcon />}
                   aria-label="aboutへ移動"
+                  sx={{textTransform: 'none'}}
                 >
-                  read more
+                  Read More
                 </Button>
               </Box>
             </Grid>
@@ -177,6 +178,17 @@ export default function Page() {
           </Box>
           <Box sx={{ m: 2 }}>
             <QAaccordions />
+          </Box>
+          <Box sx={{mt: 3, textAlign: 'center'}}>
+            <Button
+              href="/services"
+              variant="contained"
+              endIcon={<NavigateNextIcon />}
+              aria-label="servicesへ移動"
+              sx={{textTransform: 'none'}}
+            >
+              Read More
+            </Button>
           </Box>
         </Box>
 
